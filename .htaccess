@@ -1,0 +1,23 @@
+# <IfModule mod_rewrite.c>
+# 	RewriteEngine On
+
+# 	RewriteCond $1 !^(index\.php|robots\.txt|uploads|assets)
+# #	RewriteCond $1 !^(index\.php|resources|robots\.txt)
+
+# 	RewriteCond %{REQUEST_FILENAME} !-f
+# 	RewriteCond %{REQUEST_FILENAME} !-d
+# 	RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+# #	RewriteEngine On
+# #	RewriteCond %{REQUEST_FILENAME} !-f
+# #	RewriteCond %{REQUEST_FILENAME} !-d
+# #	RewriteRule ^(.*)$ index.php/$1 [L]
+
+# </IfModule>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /login-ajax/
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
+</IfModule>
